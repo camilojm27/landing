@@ -47,12 +47,86 @@ a {
   align-items: center;
 }
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: #525252;
   /*font-family: "Ruhl", sans-serif;
    animation: opening 1s ease-in-out forwards; */
 }
 
+.header__MOBILE {
+  position: relative;
+  background: #151515;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__MOBILE h1 {
+  color: white;
+  margin-left: 2rem;
+  z-index: 1;
+}
 
+.nav-links {
+  background: var(--background-color);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 1s ease;
+}
+.nav-links a {
+  display: flex;
+  margin: 20px;
+  color: white;
+  font-size: var(--header3);
+}
+.nav-links li {
+ text-align: center;
+}
+.nav-links li:first-child{
+  margin-top: 7rem;
+  border-top: 1px solid wheat;
+}
+.button{
+  margin-top: 15rem;
+  padding: 1rem;
+  border-style: double;
+  background: #303030;
+  color: aliceblue;
+}
+.nav-open {
+  transform: translateX(-100%);
+}
+
+.toggle .line1 {
+  transform: rotateZ(45deg) translateY(300%);
+  background: white;
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotateZ(-45deg) translateY(-300%);
+  background: white;
+}
+.burger {
+  z-index: 1;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.burger span {
+  padding: 0.2rem 2rem;
+  background: var(--gray-text);
+  margin: 0.5rem 0;
+  display: block;
+  transition: all 0.5s ease;
+
+}
 
 .header {
   position: fixed;
@@ -68,13 +142,13 @@ body {
   transition: left 0.1s ease-out;
   transition: background 0.5s ease-in-out; */
   color: wheat;
-  display:flex;
+  display: none;
   flex-direction: column;
-justify-content: space-between;
-align-items: center;
-}a{
+  justify-content: space-between;
+  align-items: center;
+}
+a {
   color: wheat;
-  
 }
 .header__menuIconLine {
   position: relative;
@@ -103,21 +177,20 @@ align-items: center;
 
 #logo {
   padding-left: 1rem;
+  
 }
-#do{
-  -webkit-transform: rotate(90deg);   
--moz-transform: rotate(90deg);
--ms-transform: rotate(90deg);
--o-transform: rotate(90deg);
-transform: rotate(-90deg);
-border: 1px solid whitesmoke;
-height: 98px;
-width: 155px;
+
+#do {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(-90deg);
+  border: 1px solid whitesmoke;
+  height: 98px;
+  width: 155px;
 }
-.nav-links {
-  display: flex;
-  align-self: center;
-}
+
 
 /*ANIMATIONS */
 
@@ -127,5 +200,17 @@ width: 155px;
   }
   to {
     opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .header {
+    display: flex;
+  }
+  .header__MOBILE{
+    display: none;
   }
 }
