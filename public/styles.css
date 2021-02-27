@@ -121,7 +121,7 @@ body {
 }
 .burger span {
   padding: 0.2rem 2rem;
-  background: var(--gray-text);
+  background: white;
   margin: 0.5rem 0;
   display: block;
   transition: all 0.5s ease;
@@ -159,7 +159,14 @@ a {
   display: block;
   transition: 0.25s ease-in-out;
 }
+.header__menuIcon:hover .header__menuIconLine:first-child{
+  transform: translateX(15px);
+}
+.header__menuIcon:hover .header__menuIconLine:last-child{
+  transform: translateX(-15px);
+}
 .header__menuIcon {
+  padding: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -177,7 +184,7 @@ a {
 
 #logo {
   padding-left: 1rem;
-  
+
 }
 
 #do {
@@ -203,7 +210,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media  screen and (min-width: 600px) {
   body {
     background-color: lightblue;
   }
@@ -212,5 +219,13 @@ a {
   }
   .header__MOBILE{
     display: none;
+  }
+  .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%; !important;
+  }
+  .nav-open {
+    transform: translateX(105%) translateY(-1.3%);
   }
 }
